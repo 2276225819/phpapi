@@ -1,0 +1,15 @@
+{
+    "name": "xlx/phpapi",
+    "description": "api document generator", 
+    "autoload":{
+        "psr-4": {
+            "xlx\\":"./src/"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
