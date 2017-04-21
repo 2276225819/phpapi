@@ -4,14 +4,17 @@ class PHPApi{
     public $paths=[]; 
     public $exts=['*.php'];
     public $define=[];
-    function dirs($dir,&$arr){
-        if(!is_dir($dir)) return $arr[] = $dir; 
-        foreach ($this->exts as $ext){
-            foreach ( glob($dir.'/'.$ext) as $value){ 
-                $this->dirs($value,$arr); 
-            }  
-        }    
-    }
+	function dirs($dir,&$arr){
+		if(!is_dir($dir)) 
+			return $arr[] = $dir;   
+		$dirs = glob($dir.'/*',GLOB_ONLYDIR );
+		foreach ($this->exts as $ext){
+			$dirs = array_merge($dirs, glob($dir.'/'.$ext) );
+		}    
+		foreach ($dirs as $value){ 
+			$this->dirs($value,$arr); 
+		}  
+	} 
     function bulid($doc,&$apis){
         preg_match_all('/[\r\n]@(\S+)\s([\S\s]+?)(?=[\r\n]@|$)/',$doc,$arr,PREG_SET_ORDER);
         foreach ($arr as &$v){ 

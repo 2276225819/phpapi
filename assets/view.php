@@ -15,6 +15,7 @@
         .table { border-collapse: collapse; border-spacing: 0;margin:10px 2px;  } 
      
         .left{ height: 100%; overflow: auto; float: left; width: 250px; line-height: 32px; padding-left:10px;}
+        .left li{ white-space: nowrap;}
         .right{height: 100%; overflow: auto; padding: 0 10px;   } 
         .right:after{ content:''; height:500px; display:block;}
     </style>
@@ -31,7 +32,7 @@
                 $tfn($value);  
             } 
             else {
-                echo "<a href='#$value'>$key</a>";
+                echo "<a href='#$value' title='$key'>$key</a>";
             }
             echo "</li>";
         }
