@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style> 
         html,body{margin: 0; height: 100%;}
-        pre{margin:0px; font-family:'Microsoft YaHei'} 
+        pre{margin:0px; letter-spacing: 1px;} 
         ul{ padding-left:20px;   }
         a{ text-decoration: none; color: inherit;}  
         .table tr{ background:#F5F5F5; }
@@ -32,7 +32,7 @@
                 $tfn($value);  
             } 
             else {
-                echo "<a href='#$value' title='$key'>$key</a>";
+                echo "<a href='#$value'  title='$key'>$key</a>";
             }
             echo "</li>";
         }

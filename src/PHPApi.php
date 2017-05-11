@@ -23,7 +23,7 @@ class PHPApi{
             if($v[0]=='apiName')$api['name']=array_filter(preg_split('/\s+/',$v[1]));
             if($v[0]=='apiDesc')$api['desc']=$v[1];
             if($v[0]=='apiUse'){ 
-                $this->bulid("\n".$this->define[$v[1]],$a); 
+                $this->bulid("\n".$this->define[trim($v[1])],$a); 
                 $api = array_merge($api??[],$a[0]); 
             }
             if($v[0]=='reqParam'){
